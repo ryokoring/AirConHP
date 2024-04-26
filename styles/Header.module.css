@@ -1,13 +1,17 @@
 .Header {
-  top: 0;
   background: #fff;
-  z-index: 2;
-  position: sticky;
-  width: calc(100% - 22px);
   padding: 8px 8px 8px 14px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+  flex-shrink: 0;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
 .Header_Inner {
+  min-width: 0;
+  display: flex;
   max-width: 1024px;
   margin: 0 auto;
   display: flex;
@@ -16,39 +20,20 @@
 }
 @media (min-width: 600px) {
   .Header {
-    padding: 9px 60px;
-    width: calc(100% - 120px);
+    padding: 8px 40px;
   }
 }
-.SubHeader {
-  background-color: black;
-  color: white;
-  height: 30px;
-  align-items: center;
-  display: flex;
-}
-.SubHeaderText {
-  margin-left: 60px;
-  margin-right: 60px;
-  font-size: 10px;
-  text-decoration: none;
-  color:white;
-}
-.SubHeaderMargin {
-  margin-left: 20px;
-  color: white;
-  text-decoration: none;
-}
 .Title {
-  text-decoration: none;
-  color: #333;
   display: flex;
+  margin: 0 auto 0 0;
   align-items: center;
   min-width: 0;
+  color: #333;
+  text-decoration: none;
 }
 .Title_Icon {
   width: 20px;
-  height: 35px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,19 +49,21 @@
   border-radius: 4px;
 }
 .Title_Text {
+  margin: 0;
+  padding: 0;
   font-size: 1.6rem;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .Link {
-  margin: 0 0 0 auto;
-  display: none;
+  border-right: 1px solid #e5e5e5;
+  padding: 0 8px 0 0;
+  margin: 0 12px 0 0;
 }
 .Link > a {
-  color: black;
+  color: #666;
   text-decoration: none;
   transition: color 0.2s;
   padding: 3px 12px;
@@ -84,10 +71,3 @@
 .Link > a:hover {
   color: #333;
 }
-@media (min-width: 600px) {
-  .Link {
-    display: block;
-  }
-}
-
-

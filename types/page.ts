@@ -17,6 +17,7 @@ export interface Page extends Content {
     | Features3Columns
     | Cta
     | Faq
+    | CorporateInformation
   )[]
 }
 
@@ -111,5 +112,13 @@ export interface Faq extends Section {
   data: {
     titleCopy: string
     items: FaqItem[]
+  }
+}
+
+export interface CorporateInformation extends Section {
+  type: 'CorporateInformation'
+  data: {
+    text:string,
+    richtext: string
   }
 }

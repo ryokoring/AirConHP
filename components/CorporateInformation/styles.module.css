@@ -1,0 +1,14 @@
+.InformationPadding {
+  padding: 10px;
+}
+.InformationFontSize {
+  font-size: 10px;
+}
+.title {
+    text-align: center;
+}
+.strongStyle {
+  display: inline-block;
+  width: 300px;
+  padding: 10px 0px 10px 20px;
+}

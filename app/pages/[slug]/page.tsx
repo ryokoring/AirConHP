@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import { CorporateInformation } from '@/components/CorporateInformation'
 import { Cta } from '@/components/Cta'
 import { Faq } from '@/components/Faq'
 import { FeatureImageFull } from '@/components/FeatureImageFull'
@@ -21,6 +22,7 @@ export async function generateStaticParams() {
     slug: page.slug,
   }))
 }
+
 export const dynamicParams = false
 
 export async function generateMetadata({ params }: Props) {
@@ -52,6 +54,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
+    
       {page.sections.map((section) => {
         switch (section.type) {
           case 'Hero':
@@ -70,6 +73,9 @@ export default async function Page({ params }: Props) {
             return <Cta key={section._id} data={section.data} />
           case 'FAQ':
             return <Faq key={section._id} data={section.data} />
+          case 'CorporateInformation':
+     
+            return <CorporateInformation key={section._id} data={section.data} />
           default:
             break
         }
