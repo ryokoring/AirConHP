@@ -37,19 +37,19 @@ export async function Header() {
             <Link href="/CorpAirCon">
               <span className={styles.SubHeaderMargin}>法人用エアコン</span>
             </Link>
-            <Link href="/pages/page-4">
+            <Link href="/pages/page-2">
               <span className={styles.SubHeaderMargin}>できることリスト</span>
             </Link>
             <Link href="/Contact">
               <span className={styles.SubHeaderMargin}>お問い合わせ</span>
             </Link>
-            <Link href="/">
+            <Link href="/pages/page-4">
               <span className={styles.SubHeaderMargin}>企業情報</span>
             </Link>
-            <Link href="/">
+            <Link href="/pages/page-5">
               <span className={styles.SubHeaderMargin}>採用情報</span>
             </Link>
-            <Link href="/">
+            <Link href="/pages/page-6">
               <span className={styles.SubHeaderMargin}>
                 プライバシーポリシー
               </span>
