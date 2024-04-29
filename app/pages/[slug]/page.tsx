@@ -8,6 +8,7 @@ import { FeatureImageRight } from '@/components/FeatureImageRight'
 import { Features3Columns } from '@/components/Features3Columns'
 import { Hero } from '@/components/Hero'
 import { Logo } from '@/components/Logo'
+import { PrivacyPolicy } from '@/components/PrivacyPolicy'
 import { getPages, getPage } from '@/lib/newt'
 
 type Props = {
@@ -74,8 +75,9 @@ export default async function Page({ params }: Props) {
           case 'FAQ':
             return <Faq key={section._id} data={section.data} />
           case 'CorporateInformation':
-     
             return <CorporateInformation key={section._id} data={section.data} />
+          case 'PrivacyPolicy':
+            return <PrivacyPolicy key={section._id} data={section.data} />
           default:
             break
         }

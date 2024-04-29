@@ -18,6 +18,7 @@ export interface Page extends Content {
     | Cta
     | Faq
     | CorporateInformation
+    |PrivacyPolicy
   )[]
 }
 
@@ -119,6 +120,12 @@ export interface CorporateInformation extends Section {
   type: 'CorporateInformation'
   data: {
     text:string,
+    richtext: string
+  }
+}
+export interface PrivacyPolicy extends Section {
+  type: 'PrivacyPolicy'
+  data: {
     richtext: string
   }
 }
