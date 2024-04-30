@@ -1,34 +1,66 @@
 .Container {
   padding: 40px 24px;
 }
+
 .Container_Inner {
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 980px;
+  margin: auto;
 }
 @media (min-width: 600px) {
   .Container {
     padding: 60px;
   }
+}
+
+@media (max-width: 960px) {
   .Container_Inner {
-    max-width: 980px;
+    flex-direction: column;
   }
 }
-@media (min-width: 960px) {
-  .Container_Inner {
-    display: flex;
+
+@media (max-width: 399px) {
+  .Container {
+    padding: 20px; /* 400px未満でパディングを減らす */
+  }
+  .Article {
+    width: 100%; /* 400px未満では再度フル幅に */
   }
 }
-.Articles {
-  flex: 1;
-}
+
 .Articles_Heading {
   font-size: 2rem;
   margin: 0 0 42px;
   padding: 0;
   line-height: 1.4;
 }
+.Articles_Inner {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -20px; /* 右側のマージンを打ち消し */
+  margin-bottom: -20px; /* 下側のマージンを打ち消し */
+}
+.Articles {
+  flex: 1; /* 残りのスペースを埋める */
+  padding-right: 60px; /* サイドバーとの間にスペースを作る */
+}
+
+@media (min-width: 600px) {
+  .Article {
+    width: calc(50% - 10px); /* 2列にするための幅調整 */
+  }
+}
+
 @media (min-width: 960px) {
-  .Articles {
-    margin: 0 40px 0 0;
+  .Article {
+    width: calc(33.333% - 13.333px); /* 3列にするための幅調整 */
+  }
+}
+
+@media (min-width: 1200px) {
+  .Article {
+    width: calc(25% - 15px); /* 4列にするための幅調整 */
   }
 }

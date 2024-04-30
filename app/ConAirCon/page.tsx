@@ -14,15 +14,18 @@ export default async function Page() {
 
   return (
     <>
-      {app.cover?.value && <Cover />}
+      {/* {app.cover?.value && <Cover />} */}
       <div className={styles.Container}>
         <div className={styles.Container_Inner}>
           <main className={styles.Articles}>
+          <h2 className={styles.Articles_Heading}>{headingText}</h2>
             <div className={styles.Articles_Inner}>
-              <h2 className={styles.Articles_Heading}>{headingText}</h2>
               {articles.map((article) => (
                 <ArticleCard key={article._id} article={article} />
               ))}
+              <div>
+                
+              </div>
             </div>
             <Pagination total={total} current={1} basePath={'/page'} />
           </main>

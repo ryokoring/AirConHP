@@ -7,14 +7,17 @@ import type { Article } from '@/types/article'
 
 export function ArticleCard({ article }: { article: Article }) {
   return (
-    <Link className={styles.Article} href={`/articles/${article.slug}`}>
+    <Link className={styles.Article} 
+    href={`ConAirCon/articles/${article.slug}`}
+    >
       <div className={styles.Article_Eyecatch}>
         {article.coverImage ? (
           <Image
             src={article.coverImage.src}
             alt=""
-            width="1000"
-            height="667"
+            width={150} // これらはアスペクト比の基準を示す
+            height={150}
+            layout="responsive" // これにより画像がレスポンシブになる
           />
         ) : (
           <div className={styles.Article_EyecatchEmpty}>
@@ -32,13 +35,13 @@ export function ArticleCard({ article }: { article: Article }) {
         )}
       </div>
       <div className={styles.Article_Data}>
-        <h3 className={styles.Article_Title}>{article.title}</h3>
-        <ul className={styles.Article_Tags}>
+        {/* <h3 className={styles.Article_Title}>{article.title}</h3> */}
+        {/* <ul className={styles.Article_Tags}>
           {(article.tags || []).map((tag) => (
             <li key={tag._id}>#{tag.name}</li>
           ))}
-        </ul>
-        <div className={styles.Article_Author}>
+        </ul> */}
+        {/* <div className={styles.Article_Author}>
           {article.author.profileImage ? (
             <Image
               src={article.author.profileImage.src}
@@ -65,8 +68,8 @@ export function ArticleCard({ article }: { article: Article }) {
             <time dateTime={formatDate(article._sys.createdAt)}>
               {formatDate(article._sys.createdAt)}
             </time>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </Link>
   )

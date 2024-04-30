@@ -1,7 +1,7 @@
+import { Cover } from '@/components/ConAirCon/Cover'
+import { Pagination } from '@/components/ConAirCon/Pagination'
+import { Side } from '@/components/ConAirCon/Side'
 import { ArticleCard } from '@/components/CorpAirCon/ArticleCard'
-import { Cover } from '@/components/CorpAirCon/Cover'
-import { Pagination } from '@/components/CorpAirCon/Pagination'
-import { Side } from '@/components/CorpAirCon/Side'
 import { getApp, getArticles } from '@/lib/newt'
 import styles from '@/styles/ArticleList.module.css'
 
@@ -18,11 +18,14 @@ export default async function Page() {
       <div className={styles.Container}>
         <div className={styles.Container_Inner}>
           <main className={styles.Articles}>
+          <h2 className={styles.Articles_Heading}>{headingText}</h2>
             <div className={styles.Articles_Inner}>
-              <h2 className={styles.Articles_Heading}>{headingText}</h2>
               {articles.map((article) => (
                 <ArticleCard key={article._id} article={article} />
               ))}
+              <div>
+                
+              </div>
             </div>
             <Pagination total={total} current={1} basePath={'/page'} />
           </main>
@@ -32,3 +35,4 @@ export default async function Page() {
     </>
   )
 }
+
