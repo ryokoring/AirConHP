@@ -16,15 +16,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja">
-      <body>
-        <div className={styles.Wrapper}>
-          <Header />
-          {children}
-          <Footer />
-          <Badge />
-        </div>
-      </body>
-    </html>
+    <div className={styles.Wrapper}>
+      {children}
+      <Footer />
+      <Badge />
+    </div>
   )
 }
+
